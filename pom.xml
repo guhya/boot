@@ -54,6 +54,12 @@
 			<scope>runtime</scope>
 		</dependency>
 		
+		<!-- Maria -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+		
 		<!-- Unit/Integration testing of all components -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -22,6 +22,7 @@ public class PostController {
 	@GetMapping("/v1/post")
 	public String post() {
 		logger.debug("Hello");
+		postService.countAll();
 		
 		return "Hello";
 	}

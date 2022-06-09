@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -23,6 +24,14 @@ class PostControllerTest {
 
 	@Autowired
 	ObjectMapper om;
+
+	@Autowired
+	PostRepository repository;
+	
+	@BeforeEach
+	void emptyTable() {
+		repository.deleteAll();
+	}
 
 	@Test
 	void givenGetAndNoParamPostShouldReturnString() throws Exception {
